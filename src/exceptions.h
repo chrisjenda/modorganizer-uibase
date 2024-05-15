@@ -45,6 +45,15 @@ public:
   {}
 };
 
+// Exception thrown for invalid ROR2MM links.
+class QDLLEXPORT InvalidROR2MMLinkException : public Exception
+{
+public:
+  InvalidROR2MMLinkException(const QString& link)
+      : Exception(QObject::tr("invalid ror2mm-link: %1").arg(link))
+  {}
+};
+
 // alias for backward-compatibility, should be removed when possible
 using MyException = Exception;
 
